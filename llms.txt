@@ -1,0 +1,20 @@
+# autogen-governance-adapter
+
+> APS + SINT + pluggable trust provider governance adapter for the AutoGen `before_tool_call` hook. One async function, three ordered checks (identity, authorization, optional trust), provider-agnostic interface. Python 3.10+, MIT.
+
+The adapter ships the hook, the Ed25519 passport verifier, the delegation chain walker with monotonic-narrowing invariant, and the `TrustProvider` Protocol. It does no network I/O for identity or authorization; the only network call is the optional trust-packet fetch, which is verified offline against the provider's advertised JWKS. Substrate requirements ride inside delegation scope as `inference_substrate:<id>` and `min_capability_tier:<T>` tokens — not as a parallel gate.
+
+## Canonical references
+
+- [README](https://github.com/aeoess/autogen-governance-adapter/blob/main/README.md) — install, quickstart, composition
+- [AGENTS.md](https://github.com/aeoess/autogen-governance-adapter/blob/main/AGENTS.md) — adapter-consumer wiring + coding-agent contract
+- [src/autogen_governance_adapter/hook.py](https://github.com/aeoess/autogen-governance-adapter/blob/main/src/autogen_governance_adapter/hook.py) — `governedToolCall()` entry point
+- [src/autogen_governance_adapter/trust_provider.py](https://github.com/aeoess/autogen-governance-adapter/blob/main/src/autogen_governance_adapter/trust_provider.py) — provider Protocol + `TrustPacket`
+- [providers/moltbridge/](https://github.com/aeoess/autogen-governance-adapter/tree/main/providers/moltbridge) — first provider lane (pending @EchoOfDawn)
+
+## Related projects
+
+- [microsoft/autogen#7525](https://github.com/microsoft/autogen/issues/7525) — composition thread that seeded this repo
+- [APS SDK](https://github.com/aeoess/agent-passport-system) — one identity + delegation implementation
+- [MoltBridge](https://github.com/sagemind-ai/moltbridge) — behavioral trust provider (pending first PR)
+- [MolTrust](https://github.com/moltycel/moltrust) — constraint envelopes trust provider (pending)
