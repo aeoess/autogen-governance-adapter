@@ -1,0 +1,40 @@
+{
+  "delegation_chain": [
+    {
+      "delegate_did": "did:aps:agent:bob",
+      "delegate_public_key": "SA2-YnWj0NuJnyJtnKn-ZJAOaimT1pSRhk70pWk_CTM",
+      "delegator_did": "did:aps:principal:test",
+      "delegator_public_key": "cdW4ESBhwrEWQXR5ew74V-LNiym7brDgh_BbsqBlT7Q",
+      "not_after": "2099-12-31T23:59:59Z",
+      "not_before": "2020-01-01T00:00:00Z",
+      "scope": [
+        "action:call",
+        "resource:weather_api"
+      ],
+      "signature": "qrVP_J-dooCWIJHE4TPdof_OTf016rBbsZC52Ne1U_Alt7ZcixmjF_JbfuKgO6BghgKhG3au-k9y4KqXq94HBw"
+    }
+  ],
+  "passport": {
+    "issued_at": "2020-01-01T00:00:00Z",
+    "issuer_did": "did:aps:principal:test",
+    "not_after": "2099-12-31T23:59:59Z",
+    "public_key": "SA2-YnWj0NuJnyJtnKn-ZJAOaimT1pSRhk70pWk_CTM",
+    "signature": "pmDoL27Ec9cwrZXZM--UzllIMMfxzyOZ7N8SP9259tBCner6n1PGoGw0v9EpEUJUss_Rl0foJfKbpGOudRa1AQ",
+    "subject_did": "did:aps:agent:bob"
+  },
+  "principal_jwks": {
+    "keys": [
+      {
+        "crv": "Ed25519",
+        "kid": "did:aps:principal:test",
+        "kty": "OKP",
+        "x": "cdW4ESBhwrEWQXR5ew74V-LNiym7brDgh_BbsqBlT7Q"
+      }
+    ]
+  },
+  "tool_args": {
+    "to": "bob@example.com",
+    "verb": "call"
+  },
+  "tool_name": "email_send"
+}

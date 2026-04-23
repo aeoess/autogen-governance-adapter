@@ -1,0 +1,61 @@
+{
+  "delegation_chain": [
+    {
+      "delegate_did": "did:aps:agent:alice",
+      "delegate_public_key": "0rw-wyEwjmlcfqkxboS71-c7gtkWApB_yDZKrtlkEoY",
+      "delegator_did": "did:aps:principal:test",
+      "delegator_public_key": "cdW4ESBhwrEWQXR5ew74V-LNiym7brDgh_BbsqBlT7Q",
+      "not_after": "2099-12-31T23:59:59Z",
+      "not_before": "2020-01-01T00:00:00Z",
+      "scope": [
+        "action:call",
+        "resource:weather_api",
+        "inference_substrate:approved_set_42"
+      ],
+      "signature": "HokjxFR3ivayIi7yH2netgcosRrhDZTsVnYoc2aHESuk3Rj-AVfmAV2kf7MOuqPm7RfKDM_kyxGjSNYPBR2NDg"
+    }
+  ],
+  "min_trust_score": 0.7,
+  "passport": {
+    "issued_at": "2020-01-01T00:00:00Z",
+    "issuer_did": "did:aps:principal:test",
+    "not_after": "2099-12-31T23:59:59Z",
+    "public_key": "0rw-wyEwjmlcfqkxboS71-c7gtkWApB_yDZKrtlkEoY",
+    "signature": "SbgkhIRDYplrZnLGEMNbUqgWChvr3eF8C-fd3904r9Bl6uAUxAU3k5izMdd6tKxKeTNZoXUgYod-spbIfE-zDA",
+    "subject_did": "did:aps:agent:alice"
+  },
+  "principal_jwks": {
+    "keys": [
+      {
+        "crv": "Ed25519",
+        "kid": "did:aps:principal:test",
+        "kty": "OKP",
+        "x": "cdW4ESBhwrEWQXR5ew74V-LNiym7brDgh_BbsqBlT7Q"
+      }
+    ]
+  },
+  "provider_jwks": {
+    "keys": [
+      {
+        "crv": "Ed25519",
+        "kid": "did:aps:trust:moltbridge",
+        "kty": "OKP",
+        "x": "bA3hQcCbdOAUG7E3WJ2EnaV559i7X7QtbmPUbMwSIL4"
+      }
+    ]
+  },
+  "tool_args": {
+    "city": "Vancouver",
+    "verb": "call"
+  },
+  "tool_name": "weather_api",
+  "trust_packet": {
+    "context": "behavioral_trust_v1",
+    "issued_at": "2020-01-01T00:00:00Z",
+    "issuer_did": "did:aps:trust:moltbridge",
+    "payload": "",
+    "score": 0.85,
+    "signature": "QHMOsIjyMb_z_2nUJLO8s_CTHTUWKmSHMJRnWlgdLVGvyZQ_Ut-u_iae7-Q3Eu4VdT5WoCGJwAA8Lk7wbQsfAA",
+    "subject_did": "did:aps:agent:alice"
+  }
+}

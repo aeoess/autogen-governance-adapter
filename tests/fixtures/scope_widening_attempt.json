@@ -1,0 +1,41 @@
+{
+  "delegation_chain": [
+    {
+      "delegate_did": "did:aps:agent:carol",
+      "delegate_public_key": "1sL0T_Exkyc12kVyQHS9A-fSWv4sXQgs2Ad7L4cByOw",
+      "delegator_did": "did:aps:principal:test",
+      "delegator_public_key": "cdW4ESBhwrEWQXR5ew74V-LNiym7brDgh_BbsqBlT7Q",
+      "not_after": "2099-12-31T23:59:59Z",
+      "not_before": "2020-01-01T00:00:00Z",
+      "scope": [
+        "action:call",
+        "resource:weather_api"
+      ],
+      "signature": "fu9C0rfIZocsTedhWgTFyCBdIx4TvYxidoM5ujp4FkYKqsk8C_1Ci8PKdQ2uRmzP0PxWaate3FhjU0QDqi9ZCA"
+    },
+    {
+      "delegate_did": "did:aps:agent:carol-sub",
+      "delegate_public_key": "RznpGcSiyasaW0jjPBaJ6BexWtu1VEQF4fFgTtiUoiw",
+      "delegator_did": "did:aps:agent:carol",
+      "delegator_public_key": "1sL0T_Exkyc12kVyQHS9A-fSWv4sXQgs2Ad7L4cByOw",
+      "not_after": "2099-12-31T23:59:59Z",
+      "not_before": "2020-01-01T00:00:00Z",
+      "scope": [
+        "action:*",
+        "resource:weather_api",
+        "resource:email_send"
+      ],
+      "signature": "kJNsH9M0R6wxoufutNbotiW2U1uN4DIWaqpFu1EC-kaZiFVu76Y4ttRSBwIe46SkYiPunEUak7in8Jrw5RRqAA"
+    }
+  ],
+  "principal_jwks": {
+    "keys": [
+      {
+        "crv": "Ed25519",
+        "kid": "did:aps:principal:test",
+        "kty": "OKP",
+        "x": "cdW4ESBhwrEWQXR5ew74V-LNiym7brDgh_BbsqBlT7Q"
+      }
+    ]
+  }
+}
