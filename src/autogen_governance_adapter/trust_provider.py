@@ -68,18 +68,12 @@ class TrustProvider(Protocol):
 
 def _lookup_issuer_key(jwks: dict[str, Any], issuer_did: str) -> bytes | None:
     keys = jwks.get("keys", [])
-    match = None
     for k in keys:
         if k.get("kty") != "OKP" or k.get("crv") != "Ed25519":
             continue
         if k.get("kid") == issuer_did:
-            match = k
-            break
-        if match is None:
-            match = k
-    if match is None:
-        return None
-    return _b64d(match["x"])
+            return _b64d(k["x"])
+    return None
 
 
 def verify_trust_packet(packet: TrustPacket, jwks: dict[str, Any]) -> bool:
