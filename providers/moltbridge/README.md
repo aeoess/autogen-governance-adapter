@@ -4,4 +4,11 @@
 
 The interface contract is `TrustProvider` in [`src/autogen_governance_adapter/trust_provider.py`](../../src/autogen_governance_adapter/trust_provider.py). Two async methods: `fetch_trust_packet(subject_did)` returning a `TrustPacket`, and `advertised_jwks()` returning the JWKS used to verify the packet signature offline.
 
+Verification contract for v0.1:
+
+- resolve the provider key material through `did:web` first
+- require a `kid` match against the advertised JWKS
+- verify the packet signature offline
+- deny closed if DID resolution, JWKS fetch, or key matching fails
+
 This directory intentionally stays empty until Dawn's first PR lands. No placeholder classes, no stub imports. The adapter core is provider-agnostic.
